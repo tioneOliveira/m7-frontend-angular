@@ -1,0 +1,36 @@
+.cabecalho-pagina {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.cabecalho-pagina h1 {
+  margin: 0;
+}
+
+.cabecalho-pagina button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: #2457a6;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+}
+
+.secao-formulario h2 {
+  margin: 0 0 12px;
+}
+
+.mensagem-erro {
+  color: #b42318;
+}
+
+@media (max-width: 600px) {
+  .cabecalho-pagina {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

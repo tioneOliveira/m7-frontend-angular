@@ -1,0 +1,31 @@
+<main class="container">
+  <div class="cabecalho-pagina">
+    <h1>Chamados técnicos</h1>
+    <button type="button" (click)="abrirFormulario()">Novo chamado</button>
+  </div>
+
+  @if (exibindoFormulario()) {
+    <section class="secao-formulario" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Adicionar chamado</h2>
+      <app-chamado-formulario (salvar)="adicionarChamado($event)" (cancelar)="fecharFormulario()" />
+      @if (salvando()) {
+        <p>Salvando chamado...</p>
+      }
+      @if (erroAoSalvar(); as mensagem) {
+        <p class="mensagem-erro">{{ mensagem }}</p>
+      }
+    </section>
+  }
+
+  <app-filtro-chamados
+    [pesquisa]="pesquisa()"
+    [status]="filtroStatus()"
+    (pesquisaChange)="atualizarPesquisa($event)"
+    (statusChange)="atualizarStatus($event)"
+  />
+  <app-lista-chamados
+    [chamados]="chamadosFiltrados()"
+    [carregando]="carregando()"
+    [erro]="erro()"
+  />
+</main>

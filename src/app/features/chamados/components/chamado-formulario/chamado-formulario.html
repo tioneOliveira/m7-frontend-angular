@@ -1,0 +1,47 @@
+<form class="formulario" [formGroup]="formulario" (ngSubmit)="enviar()" novalidate>
+  <div class="campo">
+    <label for="titulo">Título</label>
+    <input id="titulo" type="text" formControlName="titulo" />
+    @if (campoInvalido('titulo')) {
+      <small>Informe um título.</small>
+    }
+  </div>
+
+  <div class="campo">
+    <label for="descricao">Descrição</label>
+    <textarea id="descricao" rows="4" formControlName="descricao"></textarea>
+    @if (campoInvalido('descricao')) {
+      <small>Informe uma descrição.</small>
+    }
+  </div>
+
+  <div class="campos-linha">
+    <div class="campo">
+      <label for="prioridade">Prioridade</label>
+      <select id="prioridade" formControlName="prioridade">
+        <option value="baixa">Baixa</option>
+        <option value="media">Média</option>
+        <option value="alta">Alta</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="status">Status</label>
+      <select id="status" formControlName="status">
+        <option value="aberto">Aberto</option>
+        <option value="em_andamento">Em andamento</option>
+        <option value="concluido">Concluído</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="campo">
+    <label for="responsavel">Responsável</label>
+    <input id="responsavel" type="text" formControlName="responsavel" />
+  </div>
+
+  <div class="acoes-formulario">
+    <button type="button" class="botao-secundario" (click)="cancelar.emit()">Cancelar</button>
+    <button type="submit">Adicionar chamado</button>
+  </div>
+</form>

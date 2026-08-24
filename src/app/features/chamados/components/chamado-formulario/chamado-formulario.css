@@ -1,0 +1,69 @@
+.formulario {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+  background: white;
+  border-radius: 10px;
+}
+
+.campo {
+  display: grid;
+  gap: 6px;
+}
+
+.campo label {
+  font-weight: 600;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #c9ced8;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.campo textarea {
+  resize: vertical;
+}
+
+.campo small {
+  color: #b42318;
+}
+
+.campos-linha {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.acoes-formulario {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+button {
+  padding: 9px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: #2457a6;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+}
+
+.botao-secundario {
+  background: #e7eaf0;
+  color: #222;
+}
+
+@media (max-width: 600px) {
+  .campos-linha {
+    grid-template-columns: 1fr;
+  }
+}
